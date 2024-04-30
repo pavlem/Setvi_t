@@ -8,17 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            Circle()
+                .foregroundColor (.secondary)
+                .frame(width: 140)
+            
+            Text ("Username")
+                .bold()
+                .font(.title3)
+            
+            Text("Bio of the user")
+                .padding()
+
+            Spacer ()
+            
         }
         .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct GitUser: Codable {
+    let login: String
+    let avatarUrl: String
+    let bio: String
+    let company: String?
 }
