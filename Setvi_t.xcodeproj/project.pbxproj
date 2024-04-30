@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B09E2F22BE1ADE30010E049 /* GithubUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */; };
+		2B09E2F42BE1AE4F0010E049 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F32BE1AE4F0010E049 /* NetworkManager.swift */; };
+		2B09E2FA2BE1AFF10010E049 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F92BE1AFF10010E049 /* GithubUser.swift */; };
+		2B15784C2BE3871F000B0114 /* FontSizeBoundaryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B15784B2BE3871F000B0114 /* FontSizeBoundaryModifier.swift */; };
 		2BC7F28D2BE11B81001B49FD /* Setvi_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */; };
 		2BC7F28F2BE11B81001B49FD /* GithubUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */; };
 		2BC7F2912BE11B82001B49FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2902BE11B82001B49FD /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserViewModel.swift; sourceTree = "<group>"; };
+		2B09E2F32BE1AE4F0010E049 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2B09E2F92BE1AFF10010E049 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		2B15784B2BE3871F000B0114 /* FontSizeBoundaryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeBoundaryModifier.swift; sourceTree = "<group>"; };
 		2BC7F2892BE11B81001B49FD /* Setvi_t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setvi_t.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tApp.swift; sourceTree = "<group>"; };
 		2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B09E2F52BE1AFA30010E049 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				2B09E2F32BE1AE4F0010E049 /* NetworkManager.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		2B09E2F62BE1AFB00010E049 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B09E2F72BE1AFC00010E049 /* User */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2B09E2F72BE1AFC00010E049 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */,
+				2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2B09E2F82BE1AFD90010E049 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B09E2F92BE1AFF10010E049 /* GithubUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B15784D2BE3873F000B0114 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B15784B2BE3871F000B0114 /* FontSizeBoundaryModifier.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2BC7F2802BE11B81001B49FD = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +143,11 @@
 		2BC7F28B2BE11B81001B49FD /* Setvi_t */ = {
 			isa = PBXGroup;
 			children = (
+				2B09E2F52BE1AFA30010E049 /* Engine */,
+				2B09E2F62BE1AFB00010E049 /* UI */,
+				2B09E2F82BE1AFD90010E049 /* Models */,
+				2B15784D2BE3873F000B0114 /* Utils */,
 				2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */,
-				2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */,
-				2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */,
 				2BC7F2902BE11B82001B49FD /* Assets.xcassets */,
 				2BC7F2922BE11B82001B49FD /* Preview Content */,
 			);
@@ -260,8 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B09E2F42BE1AE4F0010E049 /* NetworkManager.swift in Sources */,
 				2BC7F28F2BE11B81001B49FD /* GithubUserView.swift in Sources */,
 				2BC7F28D2BE11B81001B49FD /* Setvi_tApp.swift in Sources */,
+				2B09E2FA2BE1AFF10010E049 /* GithubUser.swift in Sources */,
+				2B15784C2BE3871F000B0114 /* FontSizeBoundaryModifier.swift in Sources */,
 				2B09E2F22BE1ADE30010E049 /* GithubUserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
