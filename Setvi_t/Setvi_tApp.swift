@@ -11,7 +11,7 @@ import SwiftUI
 struct Setvi_tApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GithubUserView(viewModel: GithubUserViewModel(networkManager: NetworkManagerImpl()))
         }
     }
 }
