@@ -64,10 +64,15 @@ struct GithubUserView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
                     .textInputAutocapitalization(.never)
+                    .onSubmit {
+                        guard searchText.isEmpty == false else { return }
+                        viewModel.getUser(forName: searchText)
+                    }
                 
                 Spacer()
                 
                 SearchButton {
+                    guard searchText.isEmpty == false else { return }
                     viewModel.getUser(forName: searchText)
                 }
             }
