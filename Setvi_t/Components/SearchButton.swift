@@ -22,7 +22,7 @@ struct SearchButton: View {
             }
         } label: {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(.blue)
+                .foregroundColor(Colours.primary)
                 .font(.title)
         }
         .scaleEffect(scale)

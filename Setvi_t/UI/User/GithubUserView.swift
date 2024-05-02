@@ -45,7 +45,7 @@ struct GithubUserView: View {
                         Text(viewModel.login)
                     } label: {
                         HStack {
-                            Text("More detail")
+                            Text("MoreDetail".localized)
                             Image(systemName: "chevron.right")
                                 .bold()
                         }
@@ -60,7 +60,7 @@ struct GithubUserView: View {
             
             HStack {
                 
-                TextField("Enter search text", text: $searchText)
+                TextField("EnterUser".localized, text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
                     .textInputAutocapitalization(.never)
@@ -73,7 +73,7 @@ struct GithubUserView: View {
             }
             
         }
-        .modifier(DismissKeyboardOnTap())
+//        .modifier(DismissKeyboardOnTap())
         .navigationTitle(viewModel.navigationTitle)
         .modifier(FontSizeBoundaryModifier())
         .padding()

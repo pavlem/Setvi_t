@@ -13,24 +13,18 @@
 		2B15784C2BE3871F000B0114 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B15784B2BE3871F000B0114 /* ViewModifiers.swift */; };
 		2B15784F2BE38DE2000B0114 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B15784E2BE38DE2000B0114 /* SearchButton.swift */; };
 		2B1578522BE38FFE000B0114 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1578512BE38FFE000B0114 /* ErrorView.swift */; };
+		2B1578552BE3C6B9000B0114 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1578542BE3C6B9000B0114 /* Colours.swift */; };
+		2B1578582BE3CD3F000B0114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B1578562BE3CD3F000B0114 /* Localizable.strings */; };
+		2B15785B2BE3CE0D000B0114 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B15785A2BE3CE0D000B0114 /* String+Utils.swift */; };
 		2BC7F28D2BE11B81001B49FD /* Setvi_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */; };
 		2BC7F28F2BE11B81001B49FD /* GithubUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */; };
 		2BC7F2912BE11B82001B49FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2902BE11B82001B49FD /* Assets.xcassets */; };
 		2BC7F2942BE11B82001B49FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */; };
 		2BC7F29E2BE11B82001B49FD /* Setvi_tTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */; };
-		2BC7F2A82BE11B82001B49FD /* Setvi_tUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F2A72BE11B82001B49FD /* Setvi_tUITests.swift */; };
-		2BC7F2AA2BE11B82001B49FD /* Setvi_tUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F2A92BE11B82001B49FD /* Setvi_tUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		2BC7F29A2BE11B82001B49FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2BC7F2812BE11B81001B49FD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BC7F2882BE11B81001B49FD;
-			remoteInfo = Setvi_t;
-		};
-		2BC7F2A42BE11B82001B49FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BC7F2812BE11B81001B49FD /* Project object */;
 			proxyType = 1;
@@ -46,6 +40,10 @@
 		2B15784B2BE3871F000B0114 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		2B15784E2BE38DE2000B0114 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		2B1578512BE38FFE000B0114 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		2B1578542BE3C6B9000B0114 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		2B1578572BE3CD3F000B0114 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2B1578592BE3CDC8000B0114 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2B15785A2BE3CE0D000B0114 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		2BC7F2892BE11B81001B49FD /* Setvi_t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setvi_t.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tApp.swift; sourceTree = "<group>"; };
 		2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserView.swift; sourceTree = "<group>"; };
@@ -53,9 +51,6 @@
 		2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BC7F2992BE11B82001B49FD /* Setvi_tTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Setvi_tTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tTests.swift; sourceTree = "<group>"; };
-		2BC7F2A32BE11B82001B49FD /* Setvi_tUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Setvi_tUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BC7F2A72BE11B82001B49FD /* Setvi_tUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tUITests.swift; sourceTree = "<group>"; };
-		2BC7F2A92BE11B82001B49FD /* Setvi_tUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +62,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2BC7F2962BE11B82001B49FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BC7F2A02BE11B82001B49FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,6 +107,7 @@
 		2B15784D2BE3873F000B0114 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2B15785A2BE3CE0D000B0114 /* String+Utils.swift */,
 				2B15784B2BE3871F000B0114 /* ViewModifiers.swift */,
 			);
 			path = Utils;
@@ -133,12 +122,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		2B1578532BE3C6B0000B0114 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */,
+				2BC7F2902BE11B82001B49FD /* Assets.xcassets */,
+				2B1578542BE3C6B9000B0114 /* Colours.swift */,
+				2B1578562BE3CD3F000B0114 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2BC7F2802BE11B81001B49FD = {
 			isa = PBXGroup;
 			children = (
 				2BC7F28B2BE11B81001B49FD /* Setvi_t */,
 				2BC7F29C2BE11B82001B49FD /* Setvi_tTests */,
-				2BC7F2A62BE11B82001B49FD /* Setvi_tUITests */,
 				2BC7F28A2BE11B81001B49FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,7 +147,6 @@
 			children = (
 				2BC7F2892BE11B81001B49FD /* Setvi_t.app */,
 				2BC7F2992BE11B82001B49FD /* Setvi_tTests.xctest */,
-				2BC7F2A32BE11B82001B49FD /* Setvi_tUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,18 +160,9 @@
 				2B09E2F82BE1AFD90010E049 /* Models */,
 				2B1578502BE38DF4000B0114 /* Components */,
 				2B15784D2BE3873F000B0114 /* Utils */,
-				2BC7F2902BE11B82001B49FD /* Assets.xcassets */,
-				2BC7F2922BE11B82001B49FD /* Preview Content */,
+				2B1578532BE3C6B0000B0114 /* Resources */,
 			);
 			path = Setvi_t;
-			sourceTree = "<group>";
-		};
-		2BC7F2922BE11B82001B49FD /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		2BC7F29C2BE11B82001B49FD /* Setvi_tTests */ = {
@@ -182,15 +171,6 @@
 				2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */,
 			);
 			path = Setvi_tTests;
-			sourceTree = "<group>";
-		};
-		2BC7F2A62BE11B82001B49FD /* Setvi_tUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2BC7F2A72BE11B82001B49FD /* Setvi_tUITests.swift */,
-				2BC7F2A92BE11B82001B49FD /* Setvi_tUITestsLaunchTests.swift */,
-			);
-			path = Setvi_tUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,24 +211,6 @@
 			productReference = 2BC7F2992BE11B82001B49FD /* Setvi_tTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2BC7F2A22BE11B82001B49FD /* Setvi_tUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BC7F2B32BE11B82001B49FD /* Build configuration list for PBXNativeTarget "Setvi_tUITests" */;
-			buildPhases = (
-				2BC7F29F2BE11B82001B49FD /* Sources */,
-				2BC7F2A02BE11B82001B49FD /* Frameworks */,
-				2BC7F2A12BE11B82001B49FD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BC7F2A52BE11B82001B49FD /* PBXTargetDependency */,
-			);
-			name = Setvi_tUITests;
-			productName = Setvi_tUITests;
-			productReference = 2BC7F2A32BE11B82001B49FD /* Setvi_tUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,10 +228,6 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 2BC7F2882BE11B81001B49FD;
 					};
-					2BC7F2A22BE11B82001B49FD = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 2BC7F2882BE11B81001B49FD;
-					};
 				};
 			};
 			buildConfigurationList = 2BC7F2842BE11B81001B49FD /* Build configuration list for PBXProject "Setvi_t" */;
@@ -279,6 +237,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sr,
 			);
 			mainGroup = 2BC7F2802BE11B81001B49FD;
 			productRefGroup = 2BC7F28A2BE11B81001B49FD /* Products */;
@@ -287,7 +246,6 @@
 			targets = (
 				2BC7F2882BE11B81001B49FD /* Setvi_t */,
 				2BC7F2982BE11B82001B49FD /* Setvi_tTests */,
-				2BC7F2A22BE11B82001B49FD /* Setvi_tUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,18 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC7F2942BE11B82001B49FD /* Preview Assets.xcassets in Resources */,
+				2B1578582BE3CD3F000B0114 /* Localizable.strings in Resources */,
 				2BC7F2912BE11B82001B49FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2BC7F2972BE11B82001B49FD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BC7F2A12BE11B82001B49FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B15785B2BE3CE0D000B0114 /* String+Utils.swift in Sources */,
 				2B15784F2BE38DE2000B0114 /* SearchButton.swift in Sources */,
 				2B09E2F42BE1AE4F0010E049 /* NetworkManager.swift in Sources */,
 				2BC7F28F2BE11B81001B49FD /* GithubUserView.swift in Sources */,
@@ -330,6 +283,7 @@
 				2B09E2FA2BE1AFF10010E049 /* GithubUser.swift in Sources */,
 				2B15784C2BE3871F000B0114 /* ViewModifiers.swift in Sources */,
 				2B09E2F22BE1ADE30010E049 /* GithubUserViewModel.swift in Sources */,
+				2B1578552BE3C6B9000B0114 /* Colours.swift in Sources */,
 				2B1578522BE38FFE000B0114 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,15 +296,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BC7F29F2BE11B82001B49FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2BC7F2A82BE11B82001B49FD /* Setvi_tUITests.swift in Sources */,
-				2BC7F2AA2BE11B82001B49FD /* Setvi_tUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -359,12 +304,19 @@
 			target = 2BC7F2882BE11B81001B49FD /* Setvi_t */;
 			targetProxy = 2BC7F29A2BE11B82001B49FD /* PBXContainerItemProxy */;
 		};
-		2BC7F2A52BE11B82001B49FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BC7F2882BE11B81001B49FD /* Setvi_t */;
-			targetProxy = 2BC7F2A42BE11B82001B49FD /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B1578562BE3CD3F000B0114 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B1578572BE3CD3F000B0114 /* en */,
+				2B1578592BE3CDC8000B0114 /* sr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2BC7F2AB2BE11B82001B49FD /* Debug */ = {
@@ -372,6 +324,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -435,6 +388,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -493,7 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Setvi_t/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Setvi_t/Resources/\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -521,7 +475,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Setvi_t/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Setvi_t/Resources/\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -580,40 +534,6 @@
 			};
 			name = Release;
 		};
-		2BC7F2B42BE11B82001B49FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "awesomeapp.com.Setvi-tUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Setvi_t;
-			};
-			name = Debug;
-		};
-		2BC7F2B52BE11B82001B49FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "awesomeapp.com.Setvi-tUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Setvi_t;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -640,15 +560,6 @@
 			buildConfigurations = (
 				2BC7F2B12BE11B82001B49FD /* Debug */,
 				2BC7F2B22BE11B82001B49FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BC7F2B32BE11B82001B49FD /* Build configuration list for PBXNativeTarget "Setvi_tUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BC7F2B42BE11B82001B49FD /* Debug */,
-				2BC7F2B52BE11B82001B49FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

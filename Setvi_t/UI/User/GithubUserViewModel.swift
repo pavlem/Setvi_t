@@ -18,7 +18,7 @@ class GithubUserViewModel: ObservableObject {
     var bio: String { user.bio ?? "No Bio" }
     var company: String { user.company ?? "No company"}
     
-    var navigationTitle: String { "Github user" }
+    var navigationTitle: String { "GithubUser".localized }
     
     private let networkManager: NetworkManager
     @Published private var user = GithubUser()
