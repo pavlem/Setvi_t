@@ -11,10 +11,13 @@ struct GithubUserView: View {
     
     @StateObject var viewModel: GithubUserViewModel
     @State private var searchText = ""
+    @State private var isDetailsView = false
+    @State private var navigateToDetail = false
     
     var body: some View {
-        
+   
         VStack {
+
             AsyncImage(url: URL(string: viewModel.avatarUrl)) { image in
                 image
                     .resizable()
@@ -25,50 +28,58 @@ struct GithubUserView: View {
                     .foregroundColor (.secondary)
                 
             }
-            .frame(width: 140)
+            .frame(width: 120)
             
-            Text(viewModel.login)
-                .bold()
-                .font(.title3)
-            
-            Text(viewModel.bio)
-                .padding()
-            
-            Text (viewModel.company)
-                .bold()
-                .font(.title3)
-            
-            TextField("Enter search text", text: $searchText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .disableAutocorrection(true)
-                .textInputAutocapitalization(.never)
-                .padding()
-            
-            Button {
-                viewModel.getUser(forName: searchText)
-            } label: {
-                Text("Search")
+            if viewModel.isNotEmptyScreen {
+                
+                Group {
+                    Text(viewModel.login)
+                        .bold()
+                        .font(.title)
+                    Text(viewModel.bio)
+                        .font(.caption)
+                    Text(viewModel.company)
+                        .font(.caption)
+
+                    NavigationLink {
+                        Text(viewModel.login)
+                    } label: {
+                        HStack {
+                            Text("More detail")
+                            Image(systemName: "chevron.right")
+                                .bold()
+                        }
+                        .foregroundColor(.blue)
+                        
+                    }
+                }
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
             }
-            .padding()
             
             Spacer ()
+            
+            HStack {
+                
+                TextField("Enter search text", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disableAutocorrection(true)
+                    .textInputAutocapitalization(.never)
+                
+                Spacer()
+                
+                SearchButton {
+                    viewModel.getUser(forName: searchText)
+                }
+            }
+            
         }
+        .modifier(DismissKeyboardOnTap())
+        .navigationTitle(viewModel.navigationTitle)
         .modifier(FontSizeBoundaryModifier())
         .padding()
-//        .alert(viewModel.errorMessage, isPresented: $viewModel.showErrorAlert) {
-//            Button("OK", role: .cancel) { }
-//        }
         .sheet(isPresented: $viewModel.showErrorAlert) {
             ErrorView(errorMessage: viewModel.errorMessage)
         }
     }
 }
 
-struct ErrorView: View {
-    let errorMessage: String
-    var body: some View {
-        Text(errorMessage)
-            .font(.title)
-            .padding()
-    }
-}

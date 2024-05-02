@@ -11,10 +11,14 @@ class GithubUserViewModel: ObservableObject {
     
     @Published var showErrorAlert = false
     @Published var errorMessage = ""
+    
+    var isNotEmptyScreen: Bool { return login.count > 0 }
     var login: String { user.login }
     var avatarUrl: String { user.avatarUrl ?? "" }
     var bio: String { user.bio ?? "No Bio" }
     var company: String { user.company ?? "No company"}
+    
+    var navigationTitle: String { "Github user" }
     
     private let networkManager: NetworkManager
     @Published private var user = GithubUser()
