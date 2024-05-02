@@ -33,15 +33,15 @@ class GithubUserViewModel: ObservableObject {
             do {
                 let user = try await networkManager.getUser(forName: name)
                 DispatchQueue.main.async { self.user = user }
-            } catch let error as GithubError {
-                handleGithubError(error)
+            } catch let error as NetworkError {
+                handleNetworkError(error)
             } catch {
                 handleError(error)
             }
         }
     }
     
-    private func handleGithubError(_ error: GithubError) {
+    private func handleNetworkError(_ error: NetworkError) {
         let message: String
         
         switch error {
