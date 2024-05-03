@@ -1,3 +1,12 @@
-"EnterUser" = "Enter User";
-"MoreDetail" = "More detail";
+"EnterUser" = "Enter username to search";
+"MoreDetails" = "More detail";
 "GithubUser" = "Github user";
+"NoBio" = "No biography present";
+"NoCompany" = "No company found";
+"Error.InvalidUrl" = "Invalid URL provided.";
+"Error.InvalidResponse" = "Invalid response from server.";
+"Error.InvalidData" = "Invalid data received.";
+"Error.Undefined" = "An undefined error occurred.";
+"Company" = "Company: ";
+
+

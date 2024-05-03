@@ -12,8 +12,8 @@ struct Setvi_tApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                GithubUserView(
-                    viewModel: GithubUserViewModel(
+                UserDetailsView(
+                    viewModel: UserDetailsViewModel(
                         networkManager: NetworkManagerImpl()
                     )
                 )

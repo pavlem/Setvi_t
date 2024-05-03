@@ -1,3 +1,9 @@
 "EnterUser" = "Унесите корисника";
-"MoreDetail" = "Више детаља";
+"MoreDetails" = "Више детаља";
 "GithubUser" = "Гитхаб корисник";
+"NoBio" = "No biography present";
+"NoCompany" = "No company found";
+"Error.InvalidUrl" = "Invalid URL provided.";
+"Error.InvalidResponse" = "Invalid response from server.";
+"Error.InvalidData" = "Invalid data received.";
+"Error.Undefined" = "An undefined error occurred.";

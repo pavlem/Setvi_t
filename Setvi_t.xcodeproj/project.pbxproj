@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B09E2F22BE1ADE30010E049 /* GithubUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */; };
+		2B09E2F22BE1ADE30010E049 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F12BE1ADE30010E049 /* UserDetailsViewModel.swift */; };
 		2B09E2F42BE1AE4F0010E049 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F32BE1AE4F0010E049 /* NetworkManager.swift */; };
 		2B09E2FA2BE1AFF10010E049 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09E2F92BE1AFF10010E049 /* GithubUser.swift */; };
 		2B15784C2BE3871F000B0114 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B15784B2BE3871F000B0114 /* ViewModifiers.swift */; };
@@ -16,8 +16,9 @@
 		2B1578552BE3C6B9000B0114 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1578542BE3C6B9000B0114 /* Colours.swift */; };
 		2B1578582BE3CD3F000B0114 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B1578562BE3CD3F000B0114 /* Localizable.strings */; };
 		2B15785B2BE3CE0D000B0114 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B15785A2BE3CE0D000B0114 /* String+Utils.swift */; };
+		2B693A2C2BE4B7350015831E /* LoadingAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B693A2B2BE4B7350015831E /* LoadingAvatarView.swift */; };
 		2BC7F28D2BE11B81001B49FD /* Setvi_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */; };
-		2BC7F28F2BE11B81001B49FD /* GithubUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */; };
+		2BC7F28F2BE11B81001B49FD /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28E2BE11B81001B49FD /* UserDetailsView.swift */; };
 		2BC7F2912BE11B82001B49FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2902BE11B82001B49FD /* Assets.xcassets */; };
 		2BC7F2942BE11B82001B49FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */; };
 		2BC7F29E2BE11B82001B49FD /* Setvi_tTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */; };
@@ -34,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserViewModel.swift; sourceTree = "<group>"; };
+		2B09E2F12BE1ADE30010E049 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		2B09E2F32BE1AE4F0010E049 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2B09E2F92BE1AFF10010E049 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
 		2B15784B2BE3871F000B0114 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
@@ -44,9 +45,10 @@
 		2B1578572BE3CD3F000B0114 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B1578592BE3CDC8000B0114 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B15785A2BE3CE0D000B0114 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		2B693A2B2BE4B7350015831E /* LoadingAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAvatarView.swift; sourceTree = "<group>"; };
 		2BC7F2892BE11B81001B49FD /* Setvi_t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setvi_t.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tApp.swift; sourceTree = "<group>"; };
-		2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserView.swift; sourceTree = "<group>"; };
+		2BC7F28E2BE11B81001B49FD /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		2BC7F2902BE11B82001B49FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BC7F2992BE11B82001B49FD /* Setvi_tTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Setvi_tTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,18 +84,20 @@
 		2B09E2F62BE1AFB00010E049 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2B09E2F72BE1AFC00010E049 /* User */,
+				2B09E2F72BE1AFC00010E049 /* UserDetails */,
+				2B693A2D2BE4BF3A0015831E /* UserRepos */,
+				2B693A2E2BE4BF420015831E /* UserCommits */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		2B09E2F72BE1AFC00010E049 /* User */ = {
+		2B09E2F72BE1AFC00010E049 /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
-				2BC7F28E2BE11B81001B49FD /* GithubUserView.swift */,
-				2B09E2F12BE1ADE30010E049 /* GithubUserViewModel.swift */,
+				2BC7F28E2BE11B81001B49FD /* UserDetailsView.swift */,
+				2B09E2F12BE1ADE30010E049 /* UserDetailsViewModel.swift */,
 			);
-			path = User;
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		2B09E2F82BE1AFD90010E049 /* Models */ = {
@@ -116,6 +120,7 @@
 		2B1578502BE38DF4000B0114 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B693A2B2BE4B7350015831E /* LoadingAvatarView.swift */,
 				2B15784E2BE38DE2000B0114 /* SearchButton.swift */,
 				2B1578512BE38FFE000B0114 /* ErrorView.swift */,
 			);
@@ -125,12 +130,26 @@
 		2B1578532BE3C6B0000B0114 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */,
 				2BC7F2902BE11B82001B49FD /* Assets.xcassets */,
+				2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */,
 				2B1578542BE3C6B9000B0114 /* Colours.swift */,
 				2B1578562BE3CD3F000B0114 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2B693A2D2BE4BF3A0015831E /* UserRepos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserRepos;
+			sourceTree = "<group>";
+		};
+		2B693A2E2BE4BF420015831E /* UserCommits */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserCommits;
 			sourceTree = "<group>";
 		};
 		2BC7F2802BE11B81001B49FD = {
@@ -278,13 +297,14 @@
 				2B15785B2BE3CE0D000B0114 /* String+Utils.swift in Sources */,
 				2B15784F2BE38DE2000B0114 /* SearchButton.swift in Sources */,
 				2B09E2F42BE1AE4F0010E049 /* NetworkManager.swift in Sources */,
-				2BC7F28F2BE11B81001B49FD /* GithubUserView.swift in Sources */,
+				2BC7F28F2BE11B81001B49FD /* UserDetailsView.swift in Sources */,
 				2BC7F28D2BE11B81001B49FD /* Setvi_tApp.swift in Sources */,
 				2B09E2FA2BE1AFF10010E049 /* GithubUser.swift in Sources */,
 				2B15784C2BE3871F000B0114 /* ViewModifiers.swift in Sources */,
-				2B09E2F22BE1ADE30010E049 /* GithubUserViewModel.swift in Sources */,
+				2B09E2F22BE1ADE30010E049 /* UserDetailsViewModel.swift in Sources */,
 				2B1578552BE3C6B9000B0114 /* Colours.swift in Sources */,
 				2B1578522BE38FFE000B0114 /* ErrorView.swift in Sources */,
+				2B693A2C2BE4B7350015831E /* LoadingAvatarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

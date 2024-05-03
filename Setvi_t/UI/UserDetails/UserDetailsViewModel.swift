@@ -1,5 +1,5 @@
 //
-//  GithubUserViewModel.swift
+//  UserDetailsViewModel.swift
 //  Setvi_t
 //
 //  Created by Pavle on 1.5.24..
@@ -7,19 +7,27 @@
 
 import SwiftUI
 
-class GithubUserViewModel: ObservableObject {
+class UserDetailsViewModel: ObservableObject {
     
     @Published var showErrorAlert = false
     @Published var errorMessage = ""
+    @Published var isFetchingUser = false
     
-    var isNotEmptyScreen: Bool { return login.count > 0 }
-    var login: String { user.login }
+    var isNotEmptyScreen: Bool { return username.count > 0 }
+    var username: String { user.login }
     var avatarUrl: String { user.avatarUrl ?? "" }
-    var bio: String { user.bio ?? "No Bio" }
-    var company: String { user.company ?? "No company"}
-    
+    var biography: String { user.bio ?? "NoBio".localized }
+    var company: String {
+        if let company = user.company {
+            "Company".localized + company
+        } else {
+            "NoCompany".localized
+        }
+    }
     var navigationTitle: String { "GithubUser".localized }
-    
+    var moreDetails: String { "MoreDetails".localized }
+    var enterUser: String { "EnterUser".localized }
+
     private let networkManager: NetworkManager
     @Published private var user = GithubUser()
     
@@ -29,10 +37,15 @@ class GithubUserViewModel: ObservableObject {
     
     func getUser(forName name: String) {
         
+        isFetchingUser = true
+        
         Task {
             do {
                 let user = try await networkManager.getUser(forName: name)
-                DispatchQueue.main.async { self.user = user }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.isFetchingUser = false
+                    self.user = user
+                }
             } catch let error as NetworkError {
                 handleNetworkError(error)
             } catch {
@@ -46,22 +59,25 @@ class GithubUserViewModel: ObservableObject {
         
         switch error {
         case .invalidUrl:
-            message = "Invalid URL provided."
+            message = "Error.InvalidUrl".localized
         case .invalidResponse:
-            message = "Invalid response from server."
+            message = "Error.InvalidResponse".localized
         case .invalidData:
-            message = "Invalid data received."
+            message = "Error.InvalidData".localized
         }
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isFetchingUser = false
             self.errorMessage = message
             self.showErrorAlert = true
         }
     }
 
     private func handleError(_ error: Error) {
-        DispatchQueue.main.async {
-            self.errorMessage = "An undefined error occurred."
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isFetchingUser = false
+            self.errorMessage = "Error.Undefined".localized
             self.showErrorAlert = true
         }
         print(error.localizedDescription)
