@@ -29,7 +29,7 @@ class UserDetailsViewModel: ObservableObject {
     var enterUser: String { "EnterUser".localized }
 
     private let networkManager: NetworkManager
-    @Published private var user = GithubUser()
+    @Published var user = GithubUser()
     
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager

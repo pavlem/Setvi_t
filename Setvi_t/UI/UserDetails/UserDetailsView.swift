@@ -28,7 +28,7 @@ struct UserDetailsView: View {
                         .padding()
                     
                     NavigationLink {
-                        Text(viewModel.username)
+                        UserReposView(viewModel: UserReposViewModel(user: self.viewModel.user))
                     } label: {
                         
                         HStack {
@@ -59,7 +59,7 @@ struct UserDetailsView: View {
         .navigationTitle(viewModel.navigationTitle)
         .modifier(FontSizeBoundaryModifier())
         .sheet(isPresented: $viewModel.showErrorAlert) {
-            ErrorView(errorMessage: viewModel.errorMessage)
+            ErrorView(message: viewModel.errorMessage)
         }
         .background(Colours.background)
     }
@@ -82,7 +82,7 @@ struct UserDetailsView: View {
     @ViewBuilder
     private func userSearchTextField(viewModel: UserDetailsViewModel) -> some View {
         
-        let characterLimit = 10
+        let characterLimit = 25
         
         TextField(viewModel.enterUser, text: $searchText)
             .textFieldStyle(RoundedBorderTextFieldStyle())

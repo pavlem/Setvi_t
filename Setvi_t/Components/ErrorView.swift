@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct ErrorView: View {
-    let errorMessage: String
+    
+    let message: String
+    
     var body: some View {
-        Text(errorMessage)
-            .font(.title)
-            .padding()
+        VStack(spacing: ErrorView.Constants.vStackSpacing) {
+            Image(systemName: ErrorView.Constants.imageName)
+                .resizable()
+                .frame(width: ErrorView.Constants.imageFrameWH, height: ErrorView.Constants.imageFrameWH)
+            Text(message)
+                .font(.title2)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Colours.background)
+        .foregroundColor(Colours.error)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
+extension ErrorView {
+    struct Constants {
+        static let vStackSpacing = CGFloat(8)
+        static let imageFrameWH = CGFloat(110)
+        static let imageName = "exclamationmark.triangle.fill"
+    }
+}
