@@ -33,7 +33,7 @@ class CommitsViewModel: ObservableObject {
         
         Task {
             do {
-                let commits = try await networkManager.getCommits(forUser: user, andRepo: repo)
+                let commits = try await networkManager.getCommits(forUser: user, andRepository: repo)
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.isLoading = false

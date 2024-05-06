@@ -12,6 +12,7 @@ struct SearchButton: View {
     var action: () -> Void
     
     @State private var scale: CGFloat = 1.0
+    @Binding var isDisabled: Bool
 
     var body: some View {
         Button {
@@ -22,9 +23,10 @@ struct SearchButton: View {
             }
         } label: {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(Colours.primary)
+                .foregroundColor(isDisabled ? .gray : Colours.primary)
                 .font(.title)
         }
+        .disabled(isDisabled)
         .scaleEffect(scale)
     }
 

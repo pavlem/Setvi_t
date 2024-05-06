@@ -9,14 +9,13 @@ import SwiftUI
 
 @main
 struct Setvi_tApp: App {
+    
+    private let networkManager: NetworkManager = NetworkManagerImpl()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                UserDetailsView(
-                    viewModel: UserDetailsViewModel(
-                        networkManager: NetworkManagerImpl()
-                    )
-                )
+                UserView(viewModel: UserViewModel(networkManager: networkManager))
             }
         }
     }

@@ -4,7 +4,7 @@
 "NoBio" = "No biography present";
 "NoCompany" = "No company found";
 "Error.InvalidUrl" = "Invalid URL provided.";
-"Error.InvalidResponse" = "Invalid response from server.";
+"Error.InvalidUser" = "No user by that name";
 "Error.InvalidData" = "Invalid data received.";
 "Error.Undefined" = "An undefined error occurred.";
 "Company" = "Company: ";

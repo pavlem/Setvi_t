@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct UserDetailsView: View {
+struct UserView: View {
     
-    @StateObject var viewModel: UserDetailsViewModel
-    
-    @State private var enteredUser = ""
+    @StateObject var viewModel: UserViewModel
+   
+    @State private var enteredUser = "" {
+        didSet { isSearchDisabled = enteredUser.count <= 3 }
+    }
     @State private var navigateToDetail = false
+    @State private var isSearchDisabled = false
     
     var body: some View {
         
@@ -20,23 +23,22 @@ struct UserDetailsView: View {
             
             UserAvatarView(viewModel: viewModel)
             
-            if viewModel.isNotEmptyScreen {
+            VStack(spacing: 4) {
                 
-                VStack(spacing: 4) {
+                userDescription(viewModel: viewModel)
+                    .padding()
+                
+                NavigationLink {
+                    RepositoriesView(
+                        viewModel: RepositoriesViewModel(
+                            user: viewModel.user,
+                            networkManager: viewModel.networkManager
+                        )
+                    )
+                } label: {
                     
-                    userDescription(viewModel: viewModel)
-                        .padding()
-                    
-                    NavigationLink {
-                        RepositoriesView(viewModel: RepositoriesViewModel(user: self.viewModel.user, networkManager: NetworkManagerImpl()))
-                    } label: {
-                        HStack {
-                            Text(viewModel.moreDetails)
-                            Image(systemName: "chevron.right")
-                                .bold()
-                        }
+                    Text(viewModel.moreDetails)
                         .foregroundColor(Colours.primary)
-                    }
                 }
             }
             
@@ -47,11 +49,10 @@ struct UserDetailsView: View {
                 
                 Spacer()
                 
-                SearchButton {
-                    viewModel.getUser(forName: "SAllen0400")
-//                    guard searchText.isEmpty == false else { return }
-//                    viewModel.getUser(forName: searchText)
-                }
+                SearchButton(action: {
+                    guard enteredUser.isEmpty == false else { return }
+                    viewModel.getUser(forName: enteredUser)
+                }, isDisabled: $isSearchDisabled)
             }
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             
@@ -66,7 +67,7 @@ struct UserDetailsView: View {
     
     //  Sample of a custom ViewBuilder function instead of a separate view struct allowing us to inject the view directly without creating a standalone component.
     @ViewBuilder
-    private func userDescription(viewModel: UserDetailsViewModel) -> some View {
+    private func userDescription(viewModel: UserViewModel) -> some View {
         VStack(spacing: 4) {
             Text(viewModel.username)
                 .font(.title)
@@ -80,7 +81,7 @@ struct UserDetailsView: View {
     }
     
     @ViewBuilder
-    private func userSearchTextField(viewModel: UserDetailsViewModel) -> some View {
+    private func userSearchTextField(viewModel: UserViewModel) -> some View {
         
         let characterLimit = 25
         

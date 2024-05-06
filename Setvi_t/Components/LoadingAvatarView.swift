@@ -9,7 +9,14 @@ import SwiftUI
 
 struct UserAvatarView: View {
     
-    @StateObject var viewModel: UserDetailsViewModel
+    @StateObject var viewModel: UserViewModel
+    
+    struct Constants {
+        static let imageFrameWH = CGFloat(120)
+        static let imageName = "person.crop.circle.fill"
+        static let scaleEffect = CGFloat(1.5)
+        static let circlePlaceHolderColour = Color.black.opacity(0.5)
+    }
     
     var body: some View {
         
@@ -20,23 +27,23 @@ struct UserAvatarView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                Image(systemName: "person.crop.circle.fill")
+                Image(systemName: Constants.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Colours.primary)
             }
             .clipShape(Circle())
-            .frame(width: 120)
+            .frame(width: Constants.imageFrameWH)
             
-            if viewModel.isFetchingUser {
+            if viewModel.isLoading {
                 ZStack {
                     Circle()
-                        .frame(width: 120)
-                        .foregroundColor(Color.black.opacity(0.5))
+                        .frame(width: Constants.imageFrameWH)
+                        .foregroundColor(Constants.circlePlaceHolderColour)
                     
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
-                        .scaleEffect(1.5)
+                        .scaleEffect(Constants.scaleEffect)
                         .tint(Colours.primary)
                 }
             }

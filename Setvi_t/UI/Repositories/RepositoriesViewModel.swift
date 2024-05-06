@@ -35,43 +35,36 @@ class RepositoriesViewModel: ObservableObject {
         
         Task {
             do {
-                let gitRepos = try await networkManager.getRepos(forName: user.login)
+                let gitRepos = try await networkManager.getRepositories(forUser: user.login)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.isLoading = false
                     self.gitRepos = gitRepos
                 }
-            } catch let error as NetworkError {
-                handleNetworkError(error)
             } catch {
-                handleError(error)
+                handle(error: error)
             }
         }
     }
     
-    private func handleNetworkError(_ error: NetworkError) {
+    private func handle(error: Error) {
         let message: String
         
-        switch error {
-        case .invalidUrl:
-            message = "Error.InvalidUrl".localized
-        case .invalidResponse:
-            message = "Error.InvalidResponse".localized
-        case .invalidData:
-            message = "Error.InvalidData".localized
+        if let networkError = error as? NetworkError {
+            switch networkError {
+            case .invalidUrl:
+                message = "Error.InvalidUrl".localized
+            case .invalidResponse:
+                message = "Error.InvalidResponse".localized
+            case .invalidData:
+                message = "Error.InvalidData".localized
+            }
+        } else {
+            message = "Error.Undefined".localized
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+        DispatchQueue.main.async {
             self.isLoading = false
             self.errorMessage = message
-            self.showErrorAlert = true
-        }
-    }
-
-    private func handleError(_ error: Error) {
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            self.isLoading = false
-            self.errorMessage = "Error.Undefined".localized
             self.showErrorAlert = true
         }
     }

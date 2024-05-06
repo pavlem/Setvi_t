@@ -22,6 +22,9 @@ struct CommitsView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Colours.background.edgesIgnoringSafeArea(.all))
         .loadingView(isLoading: $viewModel.isLoading)
+        .sheet(isPresented: $viewModel.showErrorAlert) {
+            ErrorView(message: viewModel.errorMessage)
+        }
     }
 }
 
