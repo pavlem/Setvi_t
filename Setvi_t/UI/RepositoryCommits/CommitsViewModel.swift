@@ -1,50 +1,43 @@
 //
-//  UserDetailsViewModel.swift
+//  CommitsViewModel.swift
 //  Setvi_t
 //
-//  Created by Pavle on 1.5.24..
+//  Created by Pavle on 6.5.24..
 //
 
 import SwiftUI
 
-class UserDetailsViewModel: ObservableObject {
+class CommitsViewModel: ObservableObject {
     
+    @Published var isLoading = false
+    @Published var commits: [Commit] = [Commit]()
     @Published var showErrorAlert = false
     @Published var errorMessage = ""
-    @Published var isFetchingUser = false
     
-    var isNotEmptyScreen: Bool { return username.count > 0 }
-    var username: String { user.login }
-    var avatarUrl: String { user.avatarUrl ?? "" }
-    var biography: String { user.bio ?? "NoBio".localized }
-    var company: String {
-        if let company = user.company {
-            "Company".localized + company
-        } else {
-            "NoCompany".localized
-        }
-    }
-    var navigationTitle: String { "GithubUser".localized }
-    var moreDetails: String { "MoreDetails".localized }
-    var enterUser: String { "EnterUser".localized }
+    let networkManager: NetworkManager
+    var user: String
+    var repo: String
 
-    private let networkManager: NetworkManager
-    @Published var user = User()
+    var title: String { repo }
     
-    init(networkManager: NetworkManager) {
+    init(user: String, repo: String, networkManager: NetworkManager) {
+        self.user = user
+        self.repo = repo
         self.networkManager = networkManager
+        
+        fetchCommits()
     }
     
-    func getUser(forName name: String) {
-        
-        isFetchingUser = true
+    private func fetchCommits() {
+        self.isLoading = true
         
         Task {
             do {
-                let user = try await networkManager.getUser(forName: name)
+                let commits = try await networkManager.getCommits(forUser: user, andRepo: repo)
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.isFetchingUser = false
-                    self.user = user
+                    self.isLoading = false
+                    self.commits = commits
                 }
             } catch let error as NetworkError {
                 handleNetworkError(error)
@@ -67,16 +60,16 @@ class UserDetailsViewModel: ObservableObject {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            self.isFetchingUser = false
+            self.isLoading = false
             self.errorMessage = message
             self.showErrorAlert = true
         }
     }
-
+    
     private func handleError(_ error: Error) {
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            self.isFetchingUser = false
+            self.isLoading = false
             self.errorMessage = "Error.Undefined".localized
             self.showErrorAlert = true
         }

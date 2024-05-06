@@ -1,20 +1,20 @@
 //
-//  GithubUser.swift
+//  User.swift
 //  Setvi_t
 //
-//  Created by Pavle on 1.5.24..
+//  Created by Pavle on 6.5.24..
 //
 
 import Foundation
 
-struct GithubUser: Decodable {
+struct User: Decodable {
     let login: String
     let avatarUrl: String?
     let bio: String?
     let company: String?
 }
 
-extension GithubUser {
+extension User {
     init() {
         self.login = ""
         self.avatarUrl = ""

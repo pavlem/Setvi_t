@@ -11,7 +11,7 @@ struct UserDetailsView: View {
     
     @StateObject var viewModel: UserDetailsViewModel
     
-    @State private var searchText = ""
+    @State private var enteredUser = ""
     @State private var navigateToDetail = false
     
     var body: some View {
@@ -28,9 +28,8 @@ struct UserDetailsView: View {
                         .padding()
                     
                     NavigationLink {
-                        UserReposView(viewModel: UserReposViewModel(user: self.viewModel.user))
+                        RepositoriesView(viewModel: RepositoriesViewModel(user: self.viewModel.user, networkManager: NetworkManagerImpl()))
                     } label: {
-                        
                         HStack {
                             Text(viewModel.moreDetails)
                             Image(systemName: "chevron.right")
@@ -49,8 +48,9 @@ struct UserDetailsView: View {
                 Spacer()
                 
                 SearchButton {
-                    guard searchText.isEmpty == false else { return }
-                    viewModel.getUser(forName: searchText)
+                    viewModel.getUser(forName: "SAllen0400")
+//                    guard searchText.isEmpty == false else { return }
+//                    viewModel.getUser(forName: searchText)
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
@@ -84,24 +84,24 @@ struct UserDetailsView: View {
         
         let characterLimit = 25
         
-        TextField(viewModel.enterUser, text: $searchText)
+        TextField(viewModel.enterUser, text: $enteredUser)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .disableAutocorrection(true)
             .textInputAutocapitalization(.never)
             .keyboardType(.alphabet)
             .textContentType(.oneTimeCode)
             .autocorrectionDisabled(true)
-            .onReceive(searchText.publisher.collect()) { inputValue in
+            .onReceive(enteredUser.publisher.collect()) { inputValue in
                 let filtered = inputValue.compactMap { $0.isWhitespace ? nil : $0 }
                 if filtered.count > characterLimit {
-                    searchText = String(filtered.prefix(characterLimit))
+                    enteredUser = String(filtered.prefix(characterLimit))
                 } else {
-                    searchText = String(filtered)
+                    enteredUser = String(filtered)
                 }
             }
             .onSubmit {
-                guard searchText.isEmpty == false else { return }
-                viewModel.getUser(forName: searchText)
+                guard enteredUser.isEmpty == false else { return }
+                viewModel.getUser(forName: enteredUser)
             }
     }
 }

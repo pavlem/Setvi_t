@@ -1,50 +1,44 @@
 //
-//  UserDetailsViewModel.swift
+//  UserReposViewModel.swift
 //  Setvi_t
 //
-//  Created by Pavle on 1.5.24..
+//  Created by Pavle on 4.5.24..
 //
 
-import SwiftUI
+import Foundation
 
-class UserDetailsViewModel: ObservableObject {
+class RepositoriesViewModel: ObservableObject {
     
+    @Published var isLoading = false
+    @Published var gitRepos: [Repository] = [Repository]()
     @Published var showErrorAlert = false
     @Published var errorMessage = ""
-    @Published var isFetchingUser = false
-    
-    var isNotEmptyScreen: Bool { return username.count > 0 }
-    var username: String { user.login }
-    var avatarUrl: String { user.avatarUrl ?? "" }
-    var biography: String { user.bio ?? "NoBio".localized }
-    var company: String {
-        if let company = user.company {
-            "Company".localized + company
-        } else {
-            "NoCompany".localized
-        }
-    }
-    var navigationTitle: String { "GithubUser".localized }
-    var moreDetails: String { "MoreDetails".localized }
-    var enterUser: String { "EnterUser".localized }
 
-    private let networkManager: NetworkManager
-    @Published var user = User()
+    let networkManager: NetworkManager
+    private var user = User()
     
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
+    var userName: String {
+        user.login
     }
     
-    func getUser(forName name: String) {
+    var title: String { user.login }
+    
+    init(user: User, networkManager: NetworkManager) {
+        self.user = user
+        self.networkManager = networkManager
         
-        isFetchingUser = true
+        fetchRepos()
+    }
+    
+    private func fetchRepos() {
+        self.isLoading = true
         
         Task {
             do {
-                let user = try await networkManager.getUser(forName: name)
+                let gitRepos = try await networkManager.getRepos(forName: user.login)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.isFetchingUser = false
-                    self.user = user
+                    self.isLoading = false
+                    self.gitRepos = gitRepos
                 }
             } catch let error as NetworkError {
                 handleNetworkError(error)
@@ -67,7 +61,7 @@ class UserDetailsViewModel: ObservableObject {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            self.isFetchingUser = false
+            self.isLoading = false
             self.errorMessage = message
             self.showErrorAlert = true
         }
@@ -76,10 +70,9 @@ class UserDetailsViewModel: ObservableObject {
     private func handleError(_ error: Error) {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            self.isFetchingUser = false
+            self.isLoading = false
             self.errorMessage = "Error.Undefined".localized
             self.showErrorAlert = true
         }
-        print(error.localizedDescription)
     }
 }
