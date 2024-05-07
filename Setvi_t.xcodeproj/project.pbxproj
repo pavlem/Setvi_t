@@ -28,11 +28,12 @@
 		2BBF37DD2BE9575A001B5822 /* CommitCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF37DC2BE9575A001B5822 /* CommitCellViewModel.swift */; };
 		2BBF37DF2BE95A9B001B5822 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF37DE2BE95A9B001B5822 /* Commit.swift */; };
 		2BBF37E12BE95AED001B5822 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF37E02BE95AED001B5822 /* User.swift */; };
+		2BBF37E32BE9F610001B5822 /* RepositoryCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF37E22BE9F610001B5822 /* RepositoryCellViewModelTests.swift */; };
+		2BBF37E52BE9F7E8001B5822 /* CommitCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF37E42BE9F7E8001B5822 /* CommitCellViewModelTests.swift */; };
 		2BC7F28D2BE11B81001B49FD /* Setvi_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */; };
 		2BC7F28F2BE11B81001B49FD /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F28E2BE11B81001B49FD /* UserView.swift */; };
 		2BC7F2912BE11B82001B49FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2902BE11B82001B49FD /* Assets.xcassets */; };
 		2BC7F2942BE11B82001B49FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */; };
-		2BC7F29E2BE11B82001B49FD /* Setvi_tTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,13 +69,14 @@
 		2BBF37DC2BE9575A001B5822 /* CommitCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCellViewModel.swift; sourceTree = "<group>"; };
 		2BBF37DE2BE95A9B001B5822 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		2BBF37E02BE95AED001B5822 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BBF37E22BE9F610001B5822 /* RepositoryCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModelTests.swift; sourceTree = "<group>"; };
+		2BBF37E42BE9F7E8001B5822 /* CommitCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCellViewModelTests.swift; sourceTree = "<group>"; };
 		2BC7F2892BE11B81001B49FD /* Setvi_t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setvi_t.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC7F28C2BE11B81001B49FD /* Setvi_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tApp.swift; sourceTree = "<group>"; };
 		2BC7F28E2BE11B81001B49FD /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		2BC7F2902BE11B82001B49FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC7F2932BE11B82001B49FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BC7F2992BE11B82001B49FD /* Setvi_tTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Setvi_tTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setvi_tTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +222,8 @@
 		2BC7F29C2BE11B82001B49FD /* Setvi_tTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BC7F29D2BE11B82001B49FD /* Setvi_tTests.swift */,
+				2BBF37E22BE9F610001B5822 /* RepositoryCellViewModelTests.swift */,
+				2BBF37E42BE9F7E8001B5822 /* CommitCellViewModelTests.swift */,
 			);
 			path = Setvi_tTests;
 			sourceTree = "<group>";
@@ -356,7 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BC7F29E2BE11B82001B49FD /* Setvi_tTests.swift in Sources */,
+				2BBF37E32BE9F610001B5822 /* RepositoryCellViewModelTests.swift in Sources */,
+				2BBF37E52BE9F7E8001B5822 /* CommitCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
