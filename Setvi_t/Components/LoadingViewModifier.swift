@@ -22,6 +22,7 @@ struct LoadingViewModifier: ViewModifier {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .modifier(FontSizeBoundaryModifier())
         .background(Colours.background.edgesIgnoringSafeArea(.all))
     }
 }

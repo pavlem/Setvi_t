@@ -21,6 +21,7 @@ struct RepositoryCell: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(Colours.primary)
         }
+        .modifier(FontSizeBoundaryModifier())
         .bold()
     }
 }
