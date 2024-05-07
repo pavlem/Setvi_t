@@ -5,9 +5,8 @@
 "NoCompany" = "No company found";
 "Error.InvalidUrl" = "Invalid URL provided.";
 "Error.InvalidUser" = "No user by that name";
+"Error.InvalidRepositories" = "Something is wrong with repositories";
+"Error.InvalidCommits" = "Something is wrong with commits";
 "Error.InvalidData" = "Invalid data received.";
 "Error.Undefined" = "An undefined error occurred.";
 "Company" = "Company: ";
-
-
-

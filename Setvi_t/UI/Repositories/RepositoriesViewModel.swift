@@ -54,7 +54,7 @@ class RepositoriesViewModel: ObservableObject {
             case .invalidUrl:
                 message = "Error.InvalidUrl".localized
             case .invalidResponse:
-                message = "Error.InvalidResponse".localized
+                message = "Error.InvalidRepositories".localized
             case .invalidData:
                 message = "Error.InvalidData".localized
             }

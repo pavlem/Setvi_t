@@ -11,6 +11,12 @@ struct ErrorView: View {
     
     let message: String
     
+    struct Constants {
+        static let vStackSpacing = CGFloat(8)
+        static let imageFrameWH = CGFloat(110)
+        static let imageName = "exclamationmark.triangle.fill"
+    }
+    
     var body: some View {
         VStack(spacing: ErrorView.Constants.vStackSpacing) {
             Image(systemName: ErrorView.Constants.imageName)
@@ -24,13 +30,5 @@ struct ErrorView: View {
         .background(Colours.background)
         .foregroundColor(Colours.error)
         .edgesIgnoringSafeArea(.all)
-    }
-}
-
-extension ErrorView {
-    struct Constants {
-        static let vStackSpacing = CGFloat(8)
-        static let imageFrameWH = CGFloat(110)
-        static let imageName = "exclamationmark.triangle.fill"
     }
 }

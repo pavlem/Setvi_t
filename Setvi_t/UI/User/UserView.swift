@@ -10,12 +10,17 @@ import SwiftUI
 struct UserView: View {
     
     @StateObject var viewModel: UserViewModel
-   
+    
     @State private var enteredUser = "" {
         didSet { isSearchDisabled = enteredUser.count <= 3 }
     }
     @State private var navigateToDetail = false
     @State private var isSearchDisabled = false
+    
+    struct Constants {
+        static let vStackInfoPartSpacing = CGFloat(4)
+        static let searchFieldPadding = EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+    }
     
     var body: some View {
         
@@ -23,7 +28,7 @@ struct UserView: View {
             
             UserAvatarView(viewModel: viewModel)
             
-            VStack(spacing: 4) {
+            VStack(spacing: Constants.vStackInfoPartSpacing) {
                 
                 userDescription(viewModel: viewModel)
                     .padding()
@@ -54,7 +59,7 @@ struct UserView: View {
                     viewModel.getUser(forName: enteredUser)
                 }, isDisabled: $isSearchDisabled)
             }
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+            .padding(Constants.searchFieldPadding)
             
         }
         .navigationTitle(viewModel.navigationTitle)
